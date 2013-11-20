@@ -201,7 +201,8 @@ public class App extends Activity implements CvCameraViewListener {
     private double recordedBpmAverage;
 
     private void onRecord(MenuItem item) {
-        recording = !recording;
+    	// do nothing for now
+        /*recording = !recording;
         if (recording) {
             item.setIcon(android.R.drawable.ic_media_pause);
 
@@ -217,6 +218,7 @@ public class App extends Activity implements CvCameraViewListener {
             if (bpmDialog == null) bpmDialog = new BpmDialog();
             bpmDialog.show(getFragmentManager(), null);
         }
+        */
     }
 
     public double getRecordedBpmAverage() {
@@ -261,31 +263,31 @@ public class App extends Activity implements CvCameraViewListener {
 
     @Override
     public void onCameraFrame(Canvas canvas) {
-        Face face = getCurrentFace(pulse.getFaces()); // TODO support multiple faces
-        if (face != null) {
-            onFace(canvas, face);
-        } else {
+        //Face face = getCurrentFace(pulse.getFaces()); // TODO support multiple faces
+        //if (face != null) {
+            //onNoFace(canvas);
+        //} else {
             // draw no face box
             canvas.drawPath(createFaceBoxPath(noFaceRect), faceBoxPaint);
-            canvas.drawText("Face here",
+            canvas.drawText("Simple Rect",
                     canvas.getWidth() / 2f,
                     canvas.getHeight() / 2f,
                     faceBoxTextPaint);
 
             // no faces
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    bpmView.setNoBpm();
-                    pulseView.setNoPulse();
-                }
-            });
-        }
+            //runOnUiThread(new Runnable() {
+            //    @Override
+            //    public void run() {
+            //        bpmView.setNoBpm();
+            //        pulseView.setNoPulse();
+            //    }
+            //});
+        //}
     }
 
-    private int currentFaceId = 0;
+//    private int currentFaceId = 0;
 
-    private Face getCurrentFace(Face[] faces) {
+/*    private Face getCurrentFace(Face[] faces) {
         Face face = null;
 
         if (currentFaceId > 0) {
@@ -312,6 +314,10 @@ public class App extends Activity implements CvCameraViewListener {
             }
         }
         return null;
+    }
+
+	private void onNoFace(Canvas canvas) {
+
     }
 
     private void onFace(Canvas canvas, Face face) {
@@ -360,7 +366,7 @@ public class App extends Activity implements CvCameraViewListener {
             });
         }
     }
-
+*/
     private Paint initFaceBoxPaint() {
         Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
         p.setColor(Color.WHITE);
