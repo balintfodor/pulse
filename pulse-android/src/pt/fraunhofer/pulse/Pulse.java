@@ -5,8 +5,8 @@ import org.opencv.core.MatOfDouble;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Rect;
 
-public class Pulse {
-
+//public class Pulse {
+/*
     public Pulse() {
         self = _initialize();
     }
@@ -122,4 +122,5 @@ public class Pulse {
         private static native void _pulse(long self, long mat);
         private static native boolean _existsPulse(long self);
     }
-}
+    */
+//}
