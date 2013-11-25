@@ -290,12 +290,16 @@ public class App extends Activity implements CvCameraViewListener {
     @Override
     public void onCameraFrame(Canvas canvas)
     {
+	    final double[] signal = bind.getGraph();
+    	final int bpm = (int)bind.calculateBpm();
+
         runOnUiThread(new Runnable()
         {
         	@Override
         	public void run()
         	{
-        		bpmView.setBpm((int)bind.calculateBpm());
+        		bpmView.setBpm(bpm);
+        		graphView.setPulse(signal);
         	}
         });
     	

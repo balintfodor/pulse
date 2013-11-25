@@ -31,6 +31,9 @@ JNIEXPORT void JNICALL Java_pt_fraunhofer_pulse_NativeBind__1reset
 JNIEXPORT void JNICALL Java_pt_fraunhofer_pulse_NativeBind__1addFrame
   (JNIEnv *, jclass, jlong, jlong);
 
+JNIEXPORT void JNICALL Java_pt_fraunhofer_pulse_NativeBind__1getGraph
+  (JNIEnv *, jclass, jlong, jlong);
+
 /*
  * Class:     pt_fraunhofer_pulse_NativeBind
  * Method:    _calculateBpm

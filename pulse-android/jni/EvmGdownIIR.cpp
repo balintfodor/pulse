@@ -11,8 +11,10 @@ EvmGdownIIR::EvmGdownIIR()
 {
     first = true;
     blurredSize = Size(10, 10);
-    fLow = 70/60./10;
-    fHigh = 80/60./10;
+    fLow = 70/60./10.;
+    fHigh = 80/60./10.;
+//    fLow = 6/60./10.;
+//    fHigh = 20/60./10.;
     alpha = 200;
 }
 
@@ -42,7 +44,7 @@ void EvmGdownIIR::magnify(const Mat& src, Mat& out)
         resize(blurred, outFloat, src.size(), 0, 0, CV_INTER_LINEAR);
 
         // add back to original frame
-        outFloat += srcFloat;
+        //outFloat += srcFloat;
 
         // convert to 8 bit
         outFloat.convertTo(out, CV_8U);

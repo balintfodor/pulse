@@ -11,6 +11,7 @@ LOCAL_SRC_FILES  += EvmGdownIIR.cpp
 LOCAL_SRC_FILES  += ext/opencv.cpp
 LOCAL_SRC_FILES  += profiler/Profiler.cpp
 LOCAL_SRC_FILES  += pt_fraunhofer_pulse_NativeBind.cpp
+LOCAL_SRC_FILES  += core.cpp
 LOCAL_C_INCLUDES += $(LOCAL_PATH)
 LOCAL_LDLIBS     += -llog -ldl
 
