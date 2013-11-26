@@ -10,11 +10,11 @@ using cv::resize;
 EvmGdownIIR::EvmGdownIIR()
 {
     first = true;
-    blurredSize = Size(10, 10);
+    blurredSize = Size(30, 30);
     fLow = 70/60./10.;
     fHigh = 80/60./10.;
-//    fLow = 6/60./10.;
-//    fHigh = 20/60./10.;
+    //fLow = 6/60./10.;
+    //fHigh = 20/60./10.;
     alpha = 200;
 }
 
