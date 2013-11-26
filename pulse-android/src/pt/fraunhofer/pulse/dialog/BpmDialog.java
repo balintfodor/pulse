@@ -34,7 +34,7 @@ public class BpmDialog extends DialogFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         App app = (App)activity;
-        bpm = app.getRecordedBpmAverage();
+        //bpm = app.getRecordedBpmAverage();
     }
 
 }

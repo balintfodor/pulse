@@ -11,13 +11,13 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 import org.opencv.android.MyCameraBridgeViewBase;
 import pt.fraunhofer.pulse.App;
-import pt.fraunhofer.pulse.Pulse;
+//import pt.fraunhofer.pulse.Pulse;
 import pt.fraunhofer.pulse.R;
 
 public class ConfigDialog extends DialogFragment {
 
     private MyCameraBridgeViewBase camera;
-    private Pulse pulse;
+    //private Pulse pulse;
 
     private Switch magnificationSwitch;
     private SeekBar magnificationSeekBar;
@@ -41,9 +41,9 @@ public class ConfigDialog extends DialogFragment {
         fpsSwitch = ((Switch)dialogView.findViewById(R.id.fps));
         fpsSwitch.setOnCheckedChangeListener(new FpsSwitchConfig());
 
-        magnificationSwitch.setChecked(pulse.hasMagnification());
-        magnificationSeekBar.setEnabled(pulse.hasMagnification());
-        magnificationSeekBar.setProgress(pulse.getMagnificationFactor());
+        //magnificationSwitch.setChecked(pulse.hasMagnification());
+        //magnificationSeekBar.setEnabled(pulse.hasMagnification());
+        //magnificationSeekBar.setProgress(pulse.getMagnificationFactor());
         fpsSwitch.setChecked(camera.isFpsMeterEnabled());
 
         return builder.create();
@@ -54,21 +54,21 @@ public class ConfigDialog extends DialogFragment {
         super.onAttach(activity);
         App app = (App)activity;
         camera = app.getCamera();
-        pulse = app.getPulse();
+        //pulse = app.getPulse();
     }
 
     private class MagnificationSwitchConfig implements CompoundButton.OnCheckedChangeListener {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             magnificationSeekBar.setEnabled(isChecked);
-            pulse.setMagnification(isChecked);
+            //pulse.setMagnification(isChecked);
         }
     }
 
     private class MagnificationSeekBarConfig implements SeekBar.OnSeekBarChangeListener {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            pulse.setMagnificationFactor(progress);
+            //pulse.setMagnificationFactor(progress);
         }
 
         @Override

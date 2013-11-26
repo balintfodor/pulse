@@ -247,10 +247,10 @@ public class App extends Activity implements CvCameraViewListener {
     //    return pulse;
     //}
 
-    //public MyCameraBridgeViewBase getCamera()
-    //{
-    //    return camera;
-    //}
+    public MyCameraBridgeViewBase getCamera()
+    {
+        return camera;
+    }
 
     //private Rect noFaceRect;
 
